@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Changer</title>
+</head>
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDEJc3L27zEMZL68npr2JTvcJNiE1eDwRM",
+          authDomain: "hello-ff82f.firebaseapp.com",
+          databaseURL: "https://hello-ff82f-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "hello-ff82f",
+          storageBucket: "hello-ff82f.appspot.com",
+          messagingSenderId: "786881894223",
+          appId: "1:786881894223:web:b2b3862223dde61102973a",
+          measurementId: "G-NN558V4JP9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    <h1>Welcome to the Slide Changer</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="passcode">Passcode:</label>
+        <input type="password" id="passcode" required>
+        <br>
+        <button type="button" id="loginButton">Login</button>
+    </form>
+    
+
+    <!-- Add links to other HTML slides -->
+    <a href="./album.html" id="slide1Link" style="display: none;"></a>
+    <a href="./album.html" id="slide2Link" style="display: none;"></a>
+    <!-- Add more links to other slides as needed -->
+
+    <script>
+    
+        document.getElementById("loginButton").addEventListener("click", function () {
+            const username = document.getElementById("username").value;
+            const passcode = document.getElementById("passcode").value;
+
+            
+            if (username === "user" && passcode === "password") {
+               
+                
+                document.getElementById("slide1Link").click();
+            } else {
+                alert("Incorrect username or passcode. Try again.");
+            }
+        });
+    </script>
+</body>
+</html>
